@@ -1,0 +1,407 @@
+{
+  "oco2-lite": {
+    "start": 2014.7,
+    "end": null,
+    "note": "Sun-lit land and ocean (glint); narrow ~10 km swath, so coverage is sparse.",
+    "shapes": [
+      {
+        "shape": "band",
+        "s": -85,
+        "n": 85
+      }
+    ]
+  },
+  "oco3-lite": {
+    "start": 2019.6,
+    "end": null,
+    "note": "ISS orbit limits coverage to about 52°N-52°S.",
+    "shapes": [
+      {
+        "shape": "band",
+        "s": -52,
+        "n": 52
+      }
+    ]
+  },
+  "gosat": {
+    "start": 2009.3,
+    "end": null,
+    "note": "Global but sparse, ~250 km spacing between soundings.",
+    "shapes": [
+      {
+        "shape": "band",
+        "s": -85,
+        "n": 85
+      }
+    ]
+  },
+  "tropomi-ch4": {
+    "start": 2018.3,
+    "end": null,
+    "note": "Daily global coverage, 2600 km swath; gaps over cloud, snow and dark ocean.",
+    "shapes": [
+      {
+        "shape": "band",
+        "s": -85,
+        "n": 85
+      }
+    ]
+  },
+  "carbontracker": {
+    "start": 2000,
+    "end": 2026,
+    "note": "Global at 3° x 2°, with a 1° x 1° nest over North America (approximate extent).",
+    "shapes": [
+      {
+        "shape": "band",
+        "s": -90,
+        "n": 90
+      },
+      {
+        "shape": "rect",
+        "w": -170,
+        "s": 10,
+        "e": -50,
+        "n": 80
+      }
+    ]
+  },
+  "cams-ghg": {
+    "start": 1979,
+    "end": 2026,
+    "note": "Global fields.",
+    "shapes": [
+      {
+        "shape": "band",
+        "s": -90,
+        "n": 90
+      }
+    ]
+  },
+  "micasa": {
+    "start": 2001,
+    "end": 2025,
+    "note": "Global land only (shown here as the full globe).",
+    "shapes": [
+      {
+        "shape": "band",
+        "s": -60,
+        "n": 85
+      }
+    ]
+  },
+  "odiac": {
+    "start": 2000,
+    "end": 2025,
+    "note": "Global, 1 km grid.",
+    "shapes": [
+      {
+        "shape": "band",
+        "s": -60,
+        "n": 85
+      }
+    ]
+  },
+  "edgar": {
+    "start": 1970,
+    "end": 2025,
+    "note": "Global, by country and sector.",
+    "shapes": [
+      {
+        "shape": "band",
+        "s": -60,
+        "n": 85
+      }
+    ]
+  },
+  "gfed": {
+    "start": 1997,
+    "end": 2026,
+    "note": "Global land.",
+    "shapes": [
+      {
+        "shape": "band",
+        "s": -60,
+        "n": 85
+      }
+    ]
+  },
+  "vulcan": {
+    "start": 2010,
+    "end": 2023,
+    "note": "Contiguous United States only.",
+    "shapes": [
+      {
+        "shape": "rect",
+        "w": -125,
+        "s": 24,
+        "e": -66,
+        "n": 50
+      }
+    ]
+  },
+  "gcb": {
+    "start": 1750,
+    "end": null,
+    "note": "Global and national annual totals; record begins before the chart's start.",
+    "shapes": [
+      {
+        "shape": "band",
+        "s": -90,
+        "n": 90
+      }
+    ]
+  },
+  "tccon": {
+    "start": 2004,
+    "end": null,
+    "note": "Approximate locations of TCCON stations; individual site records start and end at different dates.",
+    "shapes": [
+      {
+        "shape": "sites",
+        "sites": [
+          [
+            -90.27,
+            45.95
+          ],
+          [
+            -97.49,
+            36.6
+          ],
+          [
+            -118.13,
+            34.14
+          ],
+          [
+            -117.88,
+            34.96
+          ],
+          [
+            -108.48,
+            36.8
+          ],
+          [
+            -104.99,
+            54.35
+          ],
+          [
+            -86.42,
+            80.05
+          ],
+          [
+            -16.5,
+            28.3
+          ],
+          [
+            11.9,
+            78.9
+          ],
+          [
+            26.6,
+            67.4
+          ],
+          [
+            8.85,
+            53.1
+          ],
+          [
+            8.44,
+            49.1
+          ],
+          [
+            11.06,
+            47.48
+          ],
+          [
+            2.11,
+            47.97
+          ],
+          [
+            2.36,
+            48.85
+          ],
+          [
+            23,
+            53.2
+          ],
+          [
+            33.38,
+            35.14
+          ],
+          [
+            140.1,
+            36.05
+          ],
+          [
+            130.3,
+            33.2
+          ],
+          [
+            143.77,
+            43.46
+          ],
+          [
+            126.33,
+            36.54
+          ],
+          [
+            116.96,
+            39.75
+          ],
+          [
+            117.17,
+            31.9
+          ],
+          [
+            120.65,
+            18.53
+          ],
+          [
+            55.49,
+            -20.9
+          ],
+          [
+            130.89,
+            -12.46
+          ],
+          [
+            150.88,
+            -34.41
+          ],
+          [
+            169.68,
+            -45.04
+          ],
+          [
+            -14.33,
+            -7.95
+          ],
+          [
+            -60.6,
+            -3.1
+          ],
+          [
+            -55.2,
+            5.8
+          ]
+        ]
+      }
+    ]
+  },
+  "obspack": {
+    "start": 1957,
+    "end": null,
+    "note": "Representative surface-network locations only; ObsPack includes hundreds of sites, towers and aircraft profiles.",
+    "shapes": [
+      {
+        "shape": "sites",
+        "sites": [
+          [
+            -156.6,
+            71.3
+          ],
+          [
+            -62.3,
+            82.5
+          ],
+          [
+            -155.6,
+            19.5
+          ],
+          [
+            -170.6,
+            -14.2
+          ],
+          [
+            144.7,
+            -40.7
+          ],
+          [
+            -9.9,
+            53.3
+          ],
+          [
+            18.5,
+            -34.4
+          ],
+          [
+            -105.6,
+            40
+          ],
+          [
+            -90.27,
+            45.95
+          ],
+          [
+            123.8,
+            24.1
+          ],
+          [
+            -59.4,
+            13.2
+          ],
+          [
+            11.9,
+            78.9
+          ],
+          [
+            7.99,
+            46.55
+          ],
+          [
+            77.5,
+            -37.8
+          ],
+          [
+            39.6,
+            -69
+          ],
+          [
+            -26.5,
+            -75.6
+          ],
+          [
+            -80.2,
+            25.7
+          ],
+          [
+            -97.5,
+            36.6
+          ],
+          [
+            -124.1,
+            41.05
+          ],
+          [
+            -14.33,
+            -7.95
+          ]
+        ]
+      }
+    ]
+  },
+  "socat": {
+    "start": 1957,
+    "end": 2026,
+    "note": "Ocean cruise and mooring data; coverage is uneven, shown here as the global ocean extent.",
+    "shapes": [
+      {
+        "shape": "band",
+        "s": -78,
+        "n": 85
+      }
+    ]
+  },
+  "gedi-l4b": {
+    "start": 2019.3,
+    "end": 2023.2,
+    "note": "Limited to about 51.6°N-51.6°S by the ISS orbit.",
+    "shapes": [
+      {
+        "shape": "band",
+        "s": -51.6,
+        "n": 51.6
+      }
+    ]
+  }
+}

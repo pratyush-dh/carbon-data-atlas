@@ -1,0 +1,690 @@
+[
+  {
+    "id": "oco2-lite",
+    "name": "OCO-2 Level 2 Bias-corrected XCO2 (Lite)",
+    "shortName": "OCO-2",
+    "type": "Satellite",
+    "gases": [
+      "CO2"
+    ],
+    "summary": "Column-averaged dry-air CO2 (XCO2) from NASA's Orbiting Carbon Observatory-2, with high precision and fine footprints.",
+    "variables": [
+      "XCO2 (ppm)",
+      "Quality flag",
+      "Averaging kernel",
+      "Solar-induced fluorescence (SIF)"
+    ],
+    "spatial": "1.29 km x 2.25 km footprints, ~10 km swath",
+    "temporal": "~16-day repeat, ~13:30 local overpass",
+    "coverage": "Global land and ocean (glint); sun-lit only",
+    "start": "2014-09",
+    "end": "Present",
+    "latency": "Weeks to a few months",
+    "format": [
+      "NetCDF4"
+    ],
+    "provider": "NASA JPL / GES DISC",
+    "version": "v11.3r",
+    "access": "Free; Earthdata Login required",
+    "downloadUrl": "https://disc.gsfc.nasa.gov/datasets/OCO2_L2_Lite_FP_11.3r/summary",
+    "docsUrl": "https://docserver.gesdisc.eosdis.nasa.gov/public/project/OCO/OCO2_V11.2_OCO3_V11_L2_Data_Users_Guide_v04_RevB_260610.pdf",
+    "doi": "10.5067/C4OENLFCYVSA",
+    "strengths": [
+      "Very low single-sounding noise",
+      "Fine footprint good for point sources and urban plumes",
+      "Well validated against TCCON"
+    ],
+    "limitations": [
+      "Narrow swath means sparse coverage",
+      "No data under cloud, aerosol or at night",
+      "Sparse at high latitudes in winter"
+    ],
+    "bestFor": "Regional to global CO2 inversions, urban/plume studies, validation of models.",
+    "useWith": "Pair with OCO-3 for longer record; compare with GOSAT for bias checks; use CAMS or CarbonTracker as a model reference.",
+    "citation": "OCO-2 Science Team et al., OCO-2 Level 2 bias-corrected XCO2 and other select fields from the full-physics retrieval aggregated as daily files, NASA GES DISC."
+  },
+  {
+    "id": "oco3-lite",
+    "name": "OCO-3 Level 2 Bias-corrected XCO2 (Lite)",
+    "shortName": "OCO-3",
+    "type": "Satellite",
+    "gases": [
+      "CO2"
+    ],
+    "summary": "XCO2 and SIF from the OCO-3 instrument on the ISS, including Snapshot Area Maps over cities and emission hotspots.",
+    "variables": [
+      "XCO2 (ppm)",
+      "Quality flag",
+      "SIF",
+      "Snapshot Area Map (SAM) mode flag"
+    ],
+    "spatial": "~2.2 km x 2.2 km footprints",
+    "temporal": "Irregular; ISS orbit samples all local times",
+    "coverage": "~52°N to 52°S",
+    "start": "2019-08",
+    "end": "Present",
+    "latency": "Weeks to a few months",
+    "format": [
+      "NetCDF4"
+    ],
+    "provider": "NASA JPL / GES DISC",
+    "version": "v11r",
+    "access": "Free; Earthdata Login required",
+    "downloadUrl": "https://disc.gsfc.nasa.gov/datasets/OCO3_L2_Lite_FP_11r/summary",
+    "docsUrl": "https://docserver.gesdisc.eosdis.nasa.gov/public/project/OCO/OCO2_V11.2_OCO3_V11_L2_Data_Users_Guide_v04_RevB_260610.pdf",
+    "doi": "10.5067/8U0VGVQC7HZG",
+    "strengths": [
+      "Samples different times of day",
+      "SAM mode maps cities and power plants in a ~80 x 80 km block",
+      "Same retrieval algorithm as OCO-2"
+    ],
+    "limitations": [
+      "No coverage poleward of ~52°",
+      "Irregular sampling",
+      "Shorter record than OCO-2"
+    ],
+    "bestFor": "City- and facility-scale CO2 studies, diurnal-cycle analysis.",
+    "useWith": "Combine with OCO-2 to extend density; keep time-of-day differences in mind.",
+    "citation": "OCO-3 Science Team et al., OCO-3 Level 2 bias-corrected XCO2 and other select fields from the full-physics retrieval aggregated as daily files, NASA GES DISC."
+  },
+  {
+    "id": "gosat",
+    "name": "GOSAT TANSO-FTS XCO2 (ACOS) and XCH4 (NIES)",
+    "shortName": "GOSAT",
+    "type": "Satellite",
+    "gases": [
+      "CO2",
+      "CH4"
+    ],
+    "summary": "The longest satellite record of both XCO2 and XCH4, from Japan's Greenhouse gases Observing SATellite.",
+    "variables": [
+      "XCO2 (ppm)",
+      "XCH4 (ppb)",
+      "Quality flag"
+    ],
+    "spatial": "~10.5 km diameter footprints, spaced ~250 km apart",
+    "temporal": "3-day repeat, ~13:00 local",
+    "coverage": "Global; sparse sampling",
+    "start": "2009-04",
+    "end": "Present",
+    "latency": "Weeks to months (varies by product)",
+    "format": [
+      "NetCDF4",
+      "HDF5"
+    ],
+    "provider": "NASA GES DISC (ACOS) / NIES / JAXA",
+    "version": "ACOS v11.0 (XCO2); NIES versions vary",
+    "access": "Free; Earthdata Login for ACOS XCO2. XCH4 and NIES versions need separate registration at the NIES GOSAT archive (currently under maintenance).",
+    "downloadUrl": "https://disc.gsfc.nasa.gov/datasets/ACOS_L2_Lite_FP_11.0/summary",
+    "docsUrl": "https://docserver.gesdisc.eosdis.nasa.gov/public/project/ACOS_GOSAT/ACOS_B11_L2_Lite_Data_Users_Guide_20260414.pdf",
+    "doi": "10.5067/UAY6VJYTS8OD",
+    "strengths": [
+      "Longest record, includes CH4",
+      "Multiple independent retrievals allow uncertainty comparison"
+    ],
+    "limitations": [
+      "Sparse spatial sampling",
+      "Coarse footprints",
+      "Retrieval versions differ in bias"
+    ],
+    "bestFor": "Long-term trends, regional flux inversions, CO2 and CH4 together.",
+    "useWith": "Use as the long baseline and OCO-2/3 for dense recent data; use TROPOMI for dense CH4.",
+    "citation": "NIES GOSAT Project, GOSAT TANSO-FTS Level 2 data products (see GOSAT Data Archive Service for version-specific citation)."
+  },
+  {
+    "id": "tropomi-ch4",
+    "name": "Sentinel-5P TROPOMI Methane (XCH4)",
+    "shortName": "TROPOMI CH4",
+    "type": "Satellite",
+    "gases": [
+      "CH4"
+    ],
+    "summary": "Daily global methane columns at high resolution, widely used to find large methane emitters.",
+    "variables": [
+      "XCH4 (ppb)",
+      "Quality value (qa_value)",
+      "Averaging kernel",
+      "Surface albedo"
+    ],
+    "spatial": "5.5 km x 7 km (7 km x 7 km before Aug 2019)",
+    "temporal": "Daily, ~13:30 local",
+    "coverage": "Global, 2600 km swath",
+    "start": "2018-04",
+    "end": "Present",
+    "latency": "Near-real-time (hours) and offline (weeks) streams",
+    "format": [
+      "NetCDF4"
+    ],
+    "provider": "ESA / SRON / Copernicus",
+    "version": "Varies by processor version",
+    "access": "Free; Copernicus Data Space account",
+    "downloadUrl": "https://browser.dataspace.copernicus.eu/",
+    "docsUrl": "https://documentation.dataspace.copernicus.eu/Data/SentinelMissions/Sentinel5P.html#sentinel-5p-level-2-methane",
+    "doi": null,
+    "strengths": [
+      "Daily global coverage",
+      "Detects super-emitters (oil and gas, coal, landfills)"
+    ],
+    "limitations": [
+      "Gaps over cloud, snow and dark ocean",
+      "Retrieval biases over bright and complex surfaces",
+      "CH4 only"
+    ],
+    "bestFor": "Methane hotspot detection, regional emission estimates.",
+    "useWith": "Pair with GOSAT for CH4 baseline and EDGAR for inventory comparison.",
+    "citation": "Copernicus Sentinel-5P (processed by ESA), TROPOMI Level 2 Methane Total Column. Copernicus Data Space Ecosystem."
+  },
+  {
+    "id": "carbontracker",
+    "name": "NOAA CarbonTracker CT2026",
+    "shortName": "CarbonTracker",
+    "type": "Model",
+    "gases": [
+      "CO2"
+    ],
+    "summary": "Data-assimilation system that estimates surface CO2 fluxes and 3D CO2 mole fractions from atmospheric observations.",
+    "variables": [
+      "Surface flux (biosphere, ocean, fossil, fire)",
+      "3D CO2 mole fraction"
+    ],
+    "spatial": "3° x 2° global, nested 1° x 1° over North America",
+    "temporal": "3-hourly (mole fractions), monthly (fluxes)",
+    "coverage": "Global",
+    "start": "2000-01",
+    "end": "2025-12",
+    "latency": "Updated yearly, delay of ~1 year",
+    "format": [
+      "NetCDF"
+    ],
+    "provider": "NOAA Global Monitoring Laboratory",
+    "version": "CT2026",
+    "access": "Free; no login",
+    "downloadUrl": "https://gml.noaa.gov/ccgg/carbontracker/download.php",
+    "docsUrl": "https://gml.noaa.gov/ccgg/carbontracker/documentation.php",
+    "doi": null,
+    "strengths": [
+      "Complete, gap-free fields",
+      "Flux split by source type",
+      "Open access"
+    ],
+    "limitations": [
+      "Coarse resolution",
+      "Results depend on prior fluxes and transport",
+      "Multi-month to yearly lag"
+    ],
+    "bestFor": "Context fields for satellite data, flux budgets, boundary conditions.",
+    "useWith": "Compare with CAMS to see model spread; use alongside OCO-2 as an independent check.",
+    "citation": "Jacobson, A. R. et al., CarbonTracker CT2026, NOAA Global Monitoring Laboratory."
+  },
+  {
+    "id": "cams-ghg",
+    "name": "CAMS Global Inversion-optimised GHG Fluxes and Concentrations",
+    "shortName": "CAMS inversion",
+    "type": "Model",
+    "gases": [
+      "CO2",
+      "CH4",
+      "N2O"
+    ],
+    "summary": "Copernicus atmospheric inversions that assimilate surface and satellite data to estimate fluxes and concentrations.",
+    "variables": [
+      "Surface fluxes",
+      "3D mole fractions",
+      "Column averages"
+    ],
+    "spatial": "CO2 and CH4 1° x 1°; N2O 2.5° x 1.27°",
+    "temporal": "3-hourly (CO2, N2O); 6-hourly/daily (CH4)",
+    "coverage": "Global",
+    "start": "1979 (CO2, CH4); 1996 (N2O)",
+    "end": "2025 (CO2, CH4); 2023 (N2O)",
+    "latency": "Months",
+    "format": [
+      "NetCDF",
+      "GRIB"
+    ],
+    "provider": "ECMWF / Copernicus Atmosphere Monitoring Service",
+    "version": "Varies (v22r2 and later)",
+    "access": "Free; Copernicus ADS account",
+    "downloadUrl": "https://ads.atmosphere.copernicus.eu/datasets/cams-global-greenhouse-gas-inversion?tab=download",
+    "docsUrl": "https://ads.atmosphere.copernicus.eu/datasets/cams-global-greenhouse-gas-inversion?tab=overview",
+    "doi": "10.24381/ed2851d2",
+    "strengths": [
+      "Three gases from one framework",
+      "Very long record",
+      "Easy API access"
+    ],
+    "limitations": [
+      "Coarse resolution",
+      "Product version changes can affect time series"
+    ],
+    "bestFor": "Long-term budgets, multi-gas studies, model comparison.",
+    "useWith": "Use with CarbonTracker for ensemble spread.",
+    "citation": "Copernicus Atmosphere Monitoring Service (CAMS), CAMS global inversion-optimised greenhouse gas fluxes and concentrations. ECMWF ADS."
+  },
+  {
+    "id": "micasa",
+    "name": "MiCASA Land Carbon Flux",
+    "shortName": "MiCASA",
+    "type": "Model",
+    "gases": [
+      "CO2"
+    ],
+    "summary": "NASA's satellite-driven land carbon model estimating NPP, heterotrophic respiration, and fire emissions for use as prior fluxes in inversions.",
+    "variables": [
+      "NPP",
+      "Heterotrophic respiration",
+      "NEE",
+      "Fire emissions"
+    ],
+    "spatial": "0.1° x 0.1°",
+    "temporal": "Daily and monthly",
+    "coverage": "Global land",
+    "start": "2001-01",
+    "end": "2024",
+    "latency": "Weeks to months",
+    "format": [
+      "NetCDF4"
+    ],
+    "provider": "NASA GSFC / CMS",
+    "version": "v1",
+    "access": "Free; Earthdata Login required",
+    "downloadUrl": "https://disc.gsfc.nasa.gov/datasets/MICASA_FLUX_M_1/summary",
+    "docsUrl": "https://acdisc.gsfc.nasa.gov/data/CMS/MICASA_FLUX_M.1/doc/MiCASA_README.pdf",
+    "doi": "10.5067/UCFEAAIDIUEQ",
+    "strengths": [
+      "High resolution",
+      "Daily time step",
+      "Driven by MODIS vegetation data"
+    ],
+    "limitations": [
+      "Land only",
+      "Bottom-up model, not optimized to CO2 observations"
+    ],
+    "bestFor": "Land biosphere priors and bottom-up flux comparison.",
+    "useWith": "Combine with ODIAC (fossil) and an ocean product to build a full flux prior.",
+    "citation": "Weir, B. et al., MiCASA Land Carbon Flux, NASA GES DISC (verify version-specific citation)."
+  },
+  {
+    "id": "odiac",
+    "name": "ODIAC Fossil Fuel CO2 Emission Dataset",
+    "shortName": "ODIAC",
+    "type": "Inventory",
+    "gases": [
+      "CO2"
+    ],
+    "summary": "High-resolution gridded global fossil fuel CO2 emissions using national totals and satellite nightlights plus point source data.",
+    "variables": [
+      "Fossil fuel CO2 emissions (tonne C per cell)"
+    ],
+    "spatial": "1 km x 1 km (also 1° x 1°)",
+    "temporal": "Monthly",
+    "coverage": "Global",
+    "start": "2000-01",
+    "end": "2024-12",
+    "latency": "Annual update, ~1 to 2 years lag",
+    "format": [
+      "GeoTIFF",
+      "NetCDF"
+    ],
+    "provider": "NIES Japan",
+    "version": "ODIAC2025",
+    "access": "Free; open download",
+    "downloadUrl": "https://www.nies.go.jp/doi/10.17595/20170411.001-e.html",
+    "docsUrl": "https://www.nies.go.jp/doi/10.17595/20170411.001-e.html",
+    "doi": "10.17595/20170411.001",
+    "strengths": [
+      "1 km resolution",
+      "Widely used as prior in urban CO2 inversions"
+    ],
+    "limitations": [
+      "Spatial distribution partly based on nightlights",
+      "Lag of 1-2 years"
+    ],
+    "bestFor": "Urban/regional fossil CO2 priors.",
+    "useWith": "Compare with EDGAR and Vulcan; combine with OCO-2/3 for urban analysis.",
+    "citation": "Oda, T. and Maksyutov, S., ODIAC Fossil Fuel CO2 Emissions Dataset, NIES (cite version used)."
+  },
+  {
+    "id": "edgar",
+    "name": "EDGAR Emissions Database for Global Atmospheric Research",
+    "shortName": "EDGAR",
+    "type": "Inventory",
+    "gases": [
+      "CO2",
+      "CH4",
+      "N2O"
+    ],
+    "summary": "Bottom-up emissions by country, sector and grid cell for greenhouse gases and air pollutants.",
+    "variables": [
+      "Emissions by sector (power, industry, transport, buildings, agriculture, waste)"
+    ],
+    "spatial": "0.1° x 0.1°",
+    "temporal": "Annual and monthly (sector profiles)",
+    "coverage": "Global, by country",
+    "start": "1970",
+    "end": "2024",
+    "latency": "~1 year",
+    "format": [
+      "NetCDF",
+      "CSV/Excel"
+    ],
+    "provider": "European Commission JRC",
+    "version": "EDGAR 2025 GHG",
+    "access": "Free; open download",
+    "downloadUrl": "https://edgar.jrc.ec.europa.eu/dataset_ghg2025",
+    "docsUrl": "https://edgar.jrc.ec.europa.eu/report_2025",
+    "doi": null,
+    "strengths": [
+      "Sector detail",
+      "Consistent global methodology",
+      "Covers CO2, CH4, N2O"
+    ],
+    "limitations": [
+      "Uncertainty larger for CH4 and for developing countries",
+      "Spatial allocation is proxy based"
+    ],
+    "bestFor": "Sector-level emission analysis, comparison to top-down estimates.",
+    "useWith": "Compare to TROPOMI-derived CH4 emissions and to ODIAC for CO2.",
+    "citation": "Crippa, M. et al., EDGAR (Emissions Database for Global Atmospheric Research), European Commission JRC (cite release used)."
+  },
+  {
+    "id": "gfed",
+    "name": "Global Fire Emissions Database (GFED5 and GFED4s)",
+    "shortName": "GFED",
+    "type": "Inventory",
+    "gases": [
+      "CO2",
+      "CH4"
+    ],
+    "summary": "Burned area and fire emissions of carbon and trace gases, including small-fire detection.",
+    "variables": [
+      "Burned area",
+      "Carbon emissions",
+      "CO2 / CH4 / CO emissions by vegetation type"
+    ],
+    "spatial": "0.25° x 0.25°",
+    "temporal": "Monthly (with daily and 3-hourly fractions in beta)",
+    "coverage": "Global land",
+    "start": "1997-01",
+    "end": "2022 (GFED5.1); near-real-time from 2023; GFED4s to 2025",
+    "latency": "Months",
+    "format": [
+      "NetCDF (GFED5)",
+      "HDF5 (GFED4s)"
+    ],
+    "provider": "Global Fire Emissions Database consortium",
+    "version": "GFED5.1 (GFED4s also available)",
+    "access": "Free; SFTP credentials are posted on the data page",
+    "downloadUrl": "https://www.globalfiredata.org/data.html",
+    "docsUrl": "https://www.globalfiredata.org/data.html",
+    "doi": null,
+    "strengths": [
+      "Long record",
+      "Includes small fires",
+      "Emission factors by vegetation type"
+    ],
+    "limitations": [
+      "Coarse grid for local fire work",
+      "Beta period has less validation"
+    ],
+    "bestFor": "Fire contribution to carbon budgets and atmospheric inversions.",
+    "useWith": "Combine with MiCASA, ODIAC, and an ocean flux dataset.",
+    "citation": "Chen, Y. et al., GFED5 burned area and fire emissions, Earth System Science Data, 2023; van der Werf, G. R. et al., GFED4s, Earth System Science Data, 2017."
+  },
+  {
+    "id": "vulcan",
+    "name": "Vulcan V4 Fossil Fuel CO2 Emissions (US)",
+    "shortName": "Vulcan",
+    "type": "Inventory",
+    "gases": [
+      "CO2"
+    ],
+    "summary": "Facility- and road-level fossil fuel CO2 emissions for the contiguous United States. Version 4 is annual; version 3 offers hourly fields for 2010-2015.",
+    "variables": [
+      "Fossil CO2 emissions by sector (onroad, electricity, commercial, residential, etc.)"
+    ],
+    "spatial": "1 km x 1 km",
+    "temporal": "Annual (hourly in Vulcan v3)",
+    "coverage": "Contiguous US",
+    "start": "2010",
+    "end": "2022",
+    "latency": "Multi-year lag",
+    "format": [
+      "NetCDF",
+      "CSV"
+    ],
+    "provider": "NAU / ORNL DAAC",
+    "version": "v4.0 (annual); v3.0 has hourly 2010-2015",
+    "access": "Free; Earthdata Login required",
+    "downloadUrl": "https://doi.org/10.3334/ORNLDAAC/2505",
+    "docsUrl": "https://doi.org/10.3334/ORNLDAAC/2505",
+    "doi": "10.3334/ORNLDAAC/2505",
+    "strengths": [
+      "Hourly with sector breakdown",
+      "Built from bottom-up facility and traffic data"
+    ],
+    "limitations": [
+      "US only",
+      "Period covered ends earlier than satellites"
+    ],
+    "bestFor": "US urban CO2 and diurnal emission studies.",
+    "useWith": "Validate against ODIAC and EDGAR; pair with OCO-3 SAMs over US cities.",
+    "citation": "Gurney, K. R. et al., Vulcan: High-Resolution Annual Fossil Fuel CO2 Emissions in USA, 2010-2022, Version 4, ORNL DAAC."
+  },
+  {
+    "id": "gcb",
+    "name": "Global Carbon Budget",
+    "shortName": "GCB",
+    "type": "Inventory",
+    "gases": [
+      "CO2"
+    ],
+    "summary": "Annual synthesis of the global CO2 budget: fossil emissions, land-use change, atmospheric growth, ocean and land sinks.",
+    "variables": [
+      "Fossil CO2 emissions",
+      "Land-use change emissions",
+      "Atmospheric growth",
+      "Ocean sink",
+      "Land sink"
+    ],
+    "spatial": "Global and national totals; gridded versions available",
+    "temporal": "Annual",
+    "coverage": "Global; by country",
+    "start": "1750 (fossil: 1850+)",
+    "end": "2025",
+    "latency": "Annual (released each Nov/Dec)",
+    "format": [
+      "Excel",
+      "NetCDF"
+    ],
+    "provider": "Global Carbon Project",
+    "version": "GCB 2025 (v1.0)",
+    "access": "Free; open download",
+    "downloadUrl": "https://globalcarbonbudget.org/datahub/",
+    "docsUrl": "https://globalcarbonbudget.org/gcb-2025/",
+    "doi": "10.18160/GCP-2025",
+    "strengths": [
+      "Authoritative global budget",
+      "Multiple model ensembles and estimates"
+    ],
+    "limitations": [
+      "Annual only",
+      "Not a high-resolution dataset"
+    ],
+    "bestFor": "Big-picture context and consistency checks.",
+    "useWith": "Use to sanity check sums of ODIAC/EDGAR + MiCASA + GFED fluxes.",
+    "citation": "Friedlingstein, P. et al., Global Carbon Budget 2025, Earth System Science Data."
+  },
+  {
+    "id": "tccon",
+    "name": "Total Carbon Column Observing Network (TCCON)",
+    "shortName": "TCCON",
+    "type": "Ground-based",
+    "gases": [
+      "CO2",
+      "CH4"
+    ],
+    "summary": "Ground-based solar-viewing FTIR spectrometers giving the accuracy standard used to validate satellite XCO2 and XCH4.",
+    "variables": [
+      "XCO2 (ppm)",
+      "XCH4 (ppb)",
+      "XCO (ppb)",
+      "XN2O (ppb)"
+    ],
+    "spatial": "Point measurements at ~30 sites worldwide",
+    "temporal": "Minutes, daytime clear-sky only",
+    "coverage": "Fixed sites; uneven global distribution",
+    "start": "2004",
+    "end": "Present (varies by site)",
+    "latency": "Months to a year",
+    "format": [
+      "NetCDF4"
+    ],
+    "provider": "TCCON consortium / CaltechDATA",
+    "version": "GGG2020.1",
+    "access": "Free; registration and data-use agreement",
+    "downloadUrl": "https://tccondata.org/",
+    "docsUrl": "https://doi.org/10.14291/tccon.ggg2020.documentation.R0",
+    "doi": "10.14291/TCCON.GGG2020p1",
+    "strengths": [
+      "Accuracy tied to WMO standards",
+      "Same column quantity as satellites"
+    ],
+    "limitations": [
+      "Few sites, mostly mid-latitude",
+      "Daytime clear-sky only",
+      "Site records start and end at different dates"
+    ],
+    "bestFor": "Validating and bias-correcting satellite columns.",
+    "useWith": "Compare with OCO-2/3, GOSAT and TROPOMI overpasses near each site.",
+    "citation": "Cite the individual TCCON site DOI listed at tccondata.org for each station used."
+  },
+  {
+    "id": "obspack",
+    "name": "NOAA ObsPack (GLOBALVIEWplus)",
+    "shortName": "ObsPack",
+    "type": "In situ",
+    "gases": [
+      "CO2",
+      "CH4"
+    ],
+    "summary": "Curated collection of surface, tower, aircraft and ship greenhouse-gas measurements prepared for model evaluation and inversions.",
+    "variables": [
+      "CO2 mole fraction (ppm)",
+      "CH4 mole fraction (ppb)",
+      "Measurement platform and height",
+      "Quality flags"
+    ],
+    "spatial": "Point and profile measurements at many sites",
+    "temporal": "Flask (weekly) to continuous (hourly)",
+    "coverage": "Global, uneven",
+    "start": "1957 (varies by site)",
+    "end": "Latest release",
+    "latency": "Annual release",
+    "format": [
+      "NetCDF"
+    ],
+    "provider": "NOAA Global Monitoring Laboratory and contributing labs",
+    "version": "CO2 v11.0 (2026-01); CH4 v8.1 (2026-07)",
+    "access": "Free; request form on the ObsPack portal, and contact data contributors before use",
+    "downloadUrl": "https://gml.noaa.gov/ccgg/obspack/data.php",
+    "docsUrl": "https://gml.noaa.gov/ccgg/obspack/",
+    "doi": null,
+    "strengths": [
+      "Very accurate near-surface data",
+      "Standardized for modeling use"
+    ],
+    "limitations": [
+      "Sparse in tropics and Southern Hemisphere",
+      "Mole fractions at the surface, not columns"
+    ],
+    "bestFor": "Evaluating model fields and constraining inversions with in situ data.",
+    "useWith": "Combine with satellite columns in inversions; compare with CarbonTracker or CAMS.",
+    "citation": "Cite the ObsPack product DOI for the release used, plus any contributing lab requested in its data policy."
+  },
+  {
+    "id": "socat",
+    "name": "Surface Ocean CO2 Atlas (SOCAT)",
+    "shortName": "SOCAT",
+    "type": "In situ",
+    "gases": [
+      "CO2"
+    ],
+    "summary": "Quality-controlled surface ocean fCO2 measurements (about 44 million observations) from ships, moorings and drifters, with gridded products.",
+    "variables": [
+      "Surface ocean fCO2",
+      "SST",
+      "Salinity",
+      "Gridded monthly fCO2"
+    ],
+    "spatial": "Cruise tracks; gridded 1° and 0.25° products",
+    "temporal": "Individual measurements; daily and monthly gridded",
+    "coverage": "Global ocean, uneven",
+    "start": "1957",
+    "end": "2025",
+    "latency": "Annual release",
+    "format": [
+      "NetCDF",
+      "TSV"
+    ],
+    "provider": "SOCAT scientific group",
+    "version": "SOCAT v2026",
+    "access": "Free; open download",
+    "downloadUrl": "https://www.socat.info/latest",
+    "docsUrl": "https://www.socat.info/cite/",
+    "doi": null,
+    "strengths": [
+      "Standard dataset for ocean carbon sink estimates",
+      "Quality-controlled with flags"
+    ],
+    "limitations": [
+      "Uneven sampling in space and time",
+      "Ocean surface only"
+    ],
+    "bestFor": "Ocean CO2 flux estimates and ocean prior fluxes.",
+    "useWith": "Pairs with MiCASA, ODIAC and GFED to complete a global flux budget.",
+    "citation": "Bakker, D. C. E. et al., Surface Ocean CO2 Atlas (SOCAT), Earth System Science Data (use the version cited)."
+  },
+  {
+    "id": "gedi-l4b",
+    "name": "GEDI L4B Gridded Aboveground Biomass Density",
+    "shortName": "GEDI L4B",
+    "type": "Satellite",
+    "gases": [
+      "CO2"
+    ],
+    "summary": "Lidar-based gridded estimates of aboveground biomass density, a proxy for carbon stored in forests.",
+    "variables": [
+      "Aboveground biomass density (Mg/ha)",
+      "Standard error",
+      "Number of footprints"
+    ],
+    "spatial": "1 km x 1 km grid",
+    "temporal": "Mission-period mean (not time series)",
+    "coverage": "~51.6°N to 51.6°S",
+    "start": "2019-04",
+    "end": "2023-03 (v2.1; check newer)",
+    "latency": "Multi-year product",
+    "format": [
+      "GeoTIFF"
+    ],
+    "provider": "NASA / University of Maryland / ORNL DAAC",
+    "version": "v2.1",
+    "access": "Free; Earthdata Login required",
+    "downloadUrl": "https://doi.org/10.3334/ORNLDAAC/2299",
+    "docsUrl": "https://daac.ornl.gov/GEDI/guides/GEDI_L4B_Gridded_Biomass_V2_1.html",
+    "doi": "10.3334/ORNLDAAC/2299",
+    "strengths": [
+      "Direct vertical structure measurements",
+      "Includes uncertainty per cell"
+    ],
+    "limitations": [
+      "Carbon stock, not flux",
+      "Not a time series",
+      "Sparse footprints, so model-based gridding"
+    ],
+    "bestFor": "Forest carbon stock mapping and biomass baselines.",
+    "useWith": "Use stocks with MiCASA fluxes and GFED fire emissions to study land carbon change.",
+    "citation": "Dubayah, R. et al., GEDI L4B Gridded Aboveground Biomass Density, Version 2.1, ORNL DAAC (verify)."
+  }
+]

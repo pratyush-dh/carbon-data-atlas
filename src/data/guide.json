@@ -1,0 +1,42 @@
+[
+  {
+    "goal": "Find large methane emitters",
+    "ids": ["tropomi-ch4", "gosat", "edgar"],
+    "how": "Use TROPOMI for daily plume and hotspot detection, GOSAT as an independent CH4 baseline, and EDGAR to compare against inventory emissions."
+  },
+  {
+    "goal": "Study CO2 over a city or power plant",
+    "ids": ["oco3-lite", "oco2-lite", "odiac", "vulcan"],
+    "how": "OCO-3 Snapshot Area Maps and OCO-2 give the observed XCO2 enhancement. ODIAC (global) or Vulcan (US) give the expected fossil emissions to compare against."
+  },
+  {
+    "goal": "Estimate regional CO2 fluxes (inversion)",
+    "ids": ["oco2-lite", "gosat", "obspack", "micasa", "odiac", "gfed", "socat"],
+    "how": "Observations: OCO-2, GOSAT and ObsPack. Prior fluxes: MiCASA (land), ODIAC (fossil), GFED (fire), SOCAT (ocean)."
+  },
+  {
+    "goal": "Validate or bias-check a satellite product",
+    "ids": ["tccon", "obspack", "oco2-lite", "gosat", "tropomi-ch4"],
+    "how": "Compare satellite soundings near TCCON sites. Use ObsPack for near-surface checks and model comparison."
+  },
+  {
+    "goal": "Get global budget context",
+    "ids": ["gcb", "carbontracker", "cams-ghg"],
+    "how": "Global Carbon Budget gives the annual totals. CarbonTracker and CAMS show how the budget is distributed in space and time."
+  },
+  {
+    "goal": "Look at land carbon and forests",
+    "ids": ["gedi-l4b", "micasa", "gfed"],
+    "how": "GEDI gives carbon stock, MiCASA gives flux, and GFED adds fire losses."
+  },
+  {
+    "goal": "Understand the ocean carbon sink",
+    "ids": ["socat", "carbontracker", "cams-ghg"],
+    "how": "SOCAT provides observations. CarbonTracker and CAMS provide model-based ocean flux estimates for comparison."
+  },
+  {
+    "goal": "Compare emission inventories with top-down estimates",
+    "ids": ["edgar", "odiac", "vulcan", "cams-ghg", "tropomi-ch4"],
+    "how": "Inventories (EDGAR, ODIAC, Vulcan) are bottom-up. CAMS inversions and TROPOMI-based estimates are top-down. Differences point to where inventories may be off."
+  }
+]
