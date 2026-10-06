@@ -8,6 +8,7 @@ import CoverageMap from './CoverageMap.jsx'
 import Timeline from './Timeline.jsx'
 import LatitudeChart from './LatitudeChart.jsx'
 import PanelToggle from './PanelToggle.jsx'
+import { startsOpen } from '../viewport.js'
 
 const DEFAULT = ['oco2-lite', 'tropomi-ch4', 'tccon']
 
@@ -15,7 +16,7 @@ export default function CoveragePage() {
   const { ids } = useCart()
   const [params] = useSearchParams()
   const [on, setOn] = useState(params.get('layers') === 'all' ? datasets.map(d => d.id) : ids.length ? ids : DEFAULT)
-  const [panel, setPanel] = useState(true)
+  const [panel, setPanel] = useState(startsOpen)
   const toggle = id => setOn(c => (c.includes(id) ? c.filter(x => x !== id) : [...c, id]))
   const shown = datasets.filter(d => on.includes(d.id))
 

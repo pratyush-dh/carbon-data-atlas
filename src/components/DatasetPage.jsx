@@ -69,6 +69,11 @@ export default function DatasetPage() {
         <span className={`tag ${typeClass(d.type)}`}>{d.type}</span>
         <h1 className="dtitle">{d.name}</h1>
         <p className="lead">{d.summary}</p>
+        <div className="m-actions">
+          <AddButton id={d.id} />
+          <a className="btn primary" href={d.downloadUrl} target="_blank" rel="noreferrer">Go to data ↗</a>
+          <a className="btn" href={d.docsUrl} target="_blank" rel="noreferrer">Documentation ↗</a>
+        </div>
 
         <div className="dsplit">
           <div className="acc-tools">
@@ -104,7 +109,7 @@ export default function DatasetPage() {
       </article>
 
       <aside className="side" aria-label="Dataset details">
-        <section className="layer">
+        <section className="layer desk-actions">
           <h2>Actions</h2>
           <div className="layer-actions">
             <AddButton id={d.id} />

@@ -476,3 +476,98 @@ select option:checked{background-color:var(--acc);color:var(--acc-fg)}
 .brand{color:var(--brand-carbon)}
 .brand-data{color:var(--brand-data);-webkit-text-fill-color:var(--brand-data)}
 .brand-atlas{color:var(--brand-atlas)}
+
+/* ===================== phones and small tablets (kept last so it wins) ===================== */
+.pt-label,.m-actions{display:none}
+@media (max-width:860px){
+  /* the page scrolls as a normal document instead of a fixed shell with a scrolling strip */
+  html,body,#root{height:auto}
+  #root{display:block;min-height:100vh}
+  main,main:has(>.layout){display:block;overflow:visible;flex:none;height:auto;padding:14px 14px 20px}
+
+  /* compact header: smaller name, links in one row, search full width with the theme toggle beside it */
+  .top{padding:12px 14px 10px;gap:6px}
+  .brand{font-size:clamp(26px,8vw,34px);letter-spacing:.06em;word-spacing:.04em;line-height:1.1}
+  nav{width:100%;justify-content:center;gap:4px 16px}
+  nav a{padding:8px 2px;font-size:15px}
+  .gsearch{flex:0 0 calc(100% - 56px);min-width:0;order:10}
+  .gsearch .searchbox,.gsearch .searchbox:focus-within{width:100%;min-width:0;max-width:none}
+  .theme{order:11;width:40px;height:40px}
+  .gresults{width:min(100%,92vw)}
+
+  /* side panels stack above the content and scroll with the page */
+  .layout,.layout.right,.layout.closed,.layout.right.closed{display:block;height:auto}
+  .layout>.side,.layout>section,.layout>article{position:static;overflow:visible;padding:0;min-height:0}
+  .layout>.side{margin-bottom:14px}
+  .layout.closed>.side{display:none}
+  .pagebar{margin-bottom:10px}
+
+  /* panel toggle shows its name on phones and is a comfortable tap target */
+  .ptoggle{width:auto;height:42px;padding:0 14px;display:inline-flex;align-items:center;gap:8px}
+  .pt-label{display:inline;font:600 14px var(--sans)}
+
+  /* tap targets and no iOS zoom on focus */
+  .opt{padding:12px 10px}
+  .btn{min-height:42px}.btn.small{min-height:36px}
+  input,select,textarea,.searchbox input{font-size:16px}
+  .icon-btn{width:42px;height:42px}
+
+  /* explore */
+  .toolbar{gap:10px}.searchbox{max-width:none;flex-basis:100%}
+  .start h2{font-size:28px}
+  .howto{grid-template-columns:1fr}
+  .gaschips{gap:10px}.gaschip{flex:1 1 100%}
+  .slide{flex-basis:78vw}
+  .car-btn{display:none}
+  .goals{gap:8px}.goal{padding:9px 14px}
+
+  /* home */
+  .landing .hero{padding:24px 18px;gap:22px}
+  .landing h1{font-size:clamp(30px,9vw,44px)}
+  .hero .cta .btn.big{flex:1 1 100%;text-align:center}
+  .stats{gap:22px}
+
+  /* dataset page: actions first, details after the content, map no longer sticky */
+  .m-actions{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+  .m-actions .btn{flex:1 1 auto;text-align:center}
+  .desk-actions{display:none}
+  .dstatic .dcard{position:static}
+  .dtitle{font-size:clamp(22px,6.4vw,30px);overflow-wrap:anywhere}
+  .acc-tools{justify-content:flex-start;margin:14px 0 8px}
+  .facts-list{padding:6px 14px 10px}
+
+  /* charts keep a readable size and scroll sideways instead of shrinking to illegible text */
+  .timeline{min-width:600px}
+  .dcard,.acc-body,.sbs>div{overflow-x:auto}
+
+  /* lists, tables and drawers */
+  .sel li{flex-wrap:wrap}
+  .drawer{width:min(360px,100vw)}
+  .callout.stacked{margin:0 auto}
+  footer{padding:10px 14px 14px}
+  .callout{padding:12px 14px}
+}
+@media (max-width:420px){
+  .grid{grid-template-columns:1fr}
+  .dcols,.dcols3{grid-template-columns:1fr}
+}
+
+/* phone fixes: stop wide children (selects, charts) from stretching grid tracks past the screen */
+@media (max-width:860px){
+  .icon-btn.ptoggle{width:auto;min-width:42px}
+  .icon-btn.ptoggle svg{flex:none}
+  .form{grid-template-columns:minmax(0,1fr);max-width:100%}
+  .form label{min-width:0}
+  .form select,.form input,.form textarea{width:100%;max-width:100%;min-width:0}
+  .dcols,.dcols3{grid-template-columns:minmax(0,1fr)}
+  .dsplit,.dscroll,.dstatic,.dataset-article,.dcard,.acc{min-width:0;max-width:100%}
+  .sbs{grid-template-columns:minmax(0,1fr)}
+  .sbs>div{min-width:0}
+  .layer-body select{min-width:0;max-width:100%}
+}
+
+/* phone: map first, then the expand/collapse controls, then the sections they control */
+@media (max-width:860px){
+  .dsplit{display:flex;flex-direction:column}
+  .dsplit>.dstatic{order:0}.dsplit>.acc-tools{order:1}.dsplit>.dscroll{order:2}
+}

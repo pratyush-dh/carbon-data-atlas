@@ -6,6 +6,7 @@ import { REGIONS, covers, parseBbox } from '../geo.js'
 import AddButton from './AddButton.jsx'
 import CoverageMap from './CoverageMap.jsx'
 import PanelToggle from './PanelToggle.jsx'
+import { startsOpen } from '../viewport.js'
 import SearchBox from './SearchBox.jsx'
 import guide from '../data/guide.json'
 import Carousel from './Carousel.jsx'
@@ -16,7 +17,7 @@ const EDGES = [['West', 0, -180, 180], ['South', 1, -90, 90], ['East', 2, -180, 
 
 export default function Explore() {
   const [params, setParams] = useSearchParams()
-  const [panel, setPanel] = useState(true)
+  const [panel, setPanel] = useState(startsOpen)
   const gas = params.get('gas') || ''
   const type = params.get('type') || ''
   const q = params.get('q') || ''
