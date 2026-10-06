@@ -571,3 +571,17 @@ select option:checked{background-color:var(--acc);color:var(--acc-fg)}
   .dsplit{display:flex;flex-direction:column}
   .dsplit>.dstatic{order:0}.dsplit>.acc-tools{order:1}.dsplit>.dscroll{order:2}
 }
+
+/* phones: a slim help note that fades in when the reader reaches the end of the page */
+@media (max-width:860px){
+  footer{padding:6px 14px 12px}
+  footer .callout,footer .fine{opacity:0;transform:translateY(8px);transition:opacity .35s ease,transform .35s ease}
+  footer.at-end .callout,footer.at-end .fine{opacity:1;transform:none}
+  .callout,.callout.stacked{flex-direction:row;flex-wrap:nowrap;justify-content:space-between;align-items:center;gap:10px;max-width:none;margin:0;padding:8px 12px;border-radius:10px;text-align:left}
+  .callout strong,.callout.stacked strong{font-size:14px;line-height:1.2}
+  .callout>span,.callout.stacked .row>span,.callout.stacked small{display:none}
+  .callout.stacked .row{display:block}
+  .callout .btn,.callout.stacked .btn{min-height:32px;padding:5px 12px;font-size:13px;white-space:nowrap}
+  .fine{font-size:11px;margin:6px 0 0;line-height:1.35}
+}
+@media (prefers-reduced-motion:reduce){footer .callout,footer .fine{transition:none}}

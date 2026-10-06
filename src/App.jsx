@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom'
 import HelpCallout from './components/HelpCallout.jsx'
 import Landing from './components/Landing.jsx'
@@ -15,7 +16,19 @@ import { INSPIRATION } from './config.js'
 
 export default function App() {
   const { ids } = useCart()
-  const onExplore = useLocation().pathname === '/explore'
+  const { pathname } = useLocation()
+  const onExplore = pathname === '/explore'
+
+  // On phones the help note stays hidden until the reader reaches the end of the page.
+  const footer = useRef(null)
+  const [atEnd, setAtEnd] = useState(false)
+  useEffect(() => {
+    const check = () => setAtEnd(footer.current ? footer.current.getBoundingClientRect().top < window.innerHeight - 8 : false)
+    const t = setTimeout(check, 50)
+    window.addEventListener('scroll', check, { passive: true })
+    window.addEventListener('resize', check)
+    return () => { clearTimeout(t); window.removeEventListener('scroll', check); window.removeEventListener('resize', check) }
+  }, [pathname])
   return (
     <>
       <a className="skip" href="#main">Skip to content</a>
@@ -45,7 +58,7 @@ export default function App() {
           <Route path="*" element={<p>Page not found. <Link to="/explore">Back to explore</Link></p>} />
         </Routes>
       </main>
-      <footer>
+      <footer ref={footer} className={atEnd ? 'at-end' : ''}>
         <HelpCallout stacked={onExplore} />
         <p className="fine">Verify versions, dates and URLs with the provider before relying on them.{!onExplore && <> Inspired by the <a href={INSPIRATION.url} target="_blank" rel="noreferrer">{INSPIRATION.name}</a>.</>}</p>
       </footer>
